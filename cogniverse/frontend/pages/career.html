@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Services - CogniVerse</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/career.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CogniVerse</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/features">Features</a>
+                    <a href="/courses">Courses</a>
+                    <a href="/career" class="active">Career</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="registerBtn">Register</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Career Hero Section -->
+    <section class="career-hero">
+        <div class="career-hero-bg"></div>
+        <div class="floating-elements" id="careerFloatingElements"></div>
+        <div class="container">
+            <div class="career-hero-content">
+                <h1>Accelerate Your Career</h1>
+                <p>Leverage AI-powered tools and expert guidance to land your dream job in the tech industry. From resume building to interview preparation, we've got you covered.</p>
+                <div class="career-stats">
+                    <div class="stat">
+                        <div class="stat-value">85%</div>
+                        <div class="stat-label">Job Placement Rate</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">2.1k+</div>
+                        <div class="stat-label">Students Hired</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">300+</div>
+                        <div class="stat-label">Partner Companies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Services Section -->
+    <section class="career-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Career Services</h2>
+                <p>Comprehensive tools and resources to support your career journey</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>AI Resume Builder</h3>
+                    <p>Create professional, ATS-friendly resumes with our intelligent builder that suggests improvements based on your target roles.</p>
+                    <button class="btn btn-primary" onclick="scrollToResume()">Build Resume</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Job Matching</h3>
+                    <p>Get personalized job recommendations based on your skills, experience, and career aspirations.</p>
+                    <button class="btn btn-primary" onclick="scrollToJobs()">Find Jobs</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Career Counseling</h3>
+                    <p>Receive personalized guidance from AI and human experts to shape your career path and make informed decisions.</p>
+                    <button class="btn btn-primary" onclick="scrollToCounseling()">Book Session</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Interview Prep</h3>
+                    <p>Practice with AI-powered mock interviews and get instant feedback on your responses and communication skills.</p>
+                    <button class="btn btn-primary">Start Practice</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking</h3>
+                    <p>Connect with industry professionals, alumni, and peers in our metaverse networking events.</p>
+                    <button class="btn btn-primary">Join Events</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Skills Analytics</h3>
+                    <p>Track your skill development and get insights on which competencies are most in-demand.</p>
+                    <button class="btn btn-primary">View Analytics</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Builder Section -->
+    <section class="resume-builder" id="resume-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI Resume Builder</h2>
+                <p>Create a professional resume that stands out to employers and passes ATS systems</p>
+            </div>
+            <div class="resume-container">
+                <div class="resume-preview">
+                    <div class="resume-header">
+                        <div class="resume-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="resume-info">
+                            <h3 id="preview-name">Alex Johnson</h3>
+                            <p id="preview-title">AI Engineer</p>
+                            <p id="preview-contact">alex.johnson@email.com • (555) 123-4567 • San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="resume-section">
+                        <h4>Professional Summary</h4>
+                        <p id="preview-summary">Experienced AI Engineer with 5+ years in machine learning and deep learning. Specialized in computer vision and natural language processing. Proven track record of deploying AI solutions that improve business metrics.</p>
+                    </div>
+                    <div class="resume-section">
+                        <h4>Work Experience</h4>
+                        <p id="preview-experience">Senior AI Engineer at TechCorp (2020-Present)<br>
+                        AI Specialist at DataSystems (2018-2020)</p>
+                    </div>
+                    <div class="resume-section">
+                        <h4>Education</h4>
+                        <p id="preview-education">M.S. in Computer Science, Stanford University<br>
+                        B.S. in Mathematics, UC Berkeley</p>
+                    </div>
+                    <div class="resume-section">
+                        <h4>Skills</h4>
+                        <p id="preview-skills">Python, TensorFlow, PyTorch, Computer Vision, NLP, AWS, Docker, Kubernetes</p>
+                    </div>
+                </div>
+                <div class="resume-builder-form">
+                    <h3>Build Your Resume</h3>
+                    <form id="resumeForm">
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" value="Alex Johnson">
+                                </div>
+                                <div class="form-group">
+                                    <label for="jobTitle">Professional Title</label>
+                                    <input type="text" id="jobTitle" value="AI Engineer">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" value="alex.johnson@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" id="phone" value="(555) 123-4567">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" value="San Francisco, CA">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Professional Summary</h3>
+                            <div class="form-group">
+                                <textarea id="summary">Experienced AI Engineer with 5+ years in machine learning and deep learning. Specialized in computer vision and natural language processing. Proven track record of deploying AI solutions that improve business metrics.</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Work Experience</h3>
+                            <div class="form-group">
+                                <textarea id="experience">Senior AI Engineer at TechCorp (2020-Present)
+- Led development of computer vision system that reduced processing time by 40%
+- Implemented NLP models that improved customer service response accuracy by 25%
+
+AI Specialist at DataSystems (2018-2020)
+- Developed predictive models for customer behavior analysis
+- Collaborated with cross-functional teams to deploy ML solutions</textarea>
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="addExperience()">Add Another Experience</button>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Education</h3>
+                            <div class="form-group">
+                                <textarea id="education">M.S. in Computer Science, Stanford University (2018)
+- Specialization in Artificial Intelligence
+- GPA: 3.8/4.0
+
+B.S. in Mathematics, UC Berkeley (2016)
+- Minor in Computer Science
+- GPA: 3.7/4.0</textarea>
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="addEducation()">Add Another Education</button>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Skills</h3>
+                            <div class="form-group">
+                                <input type="text" id="skills" value="Python, TensorFlow, PyTorch, Computer Vision, NLP, AWS, Docker, Kubernetes">
+                                <small style="color: #a0a0e0; display: block; margin-top: 0.5rem;">Separate skills with commas</small>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                            <button type="button" class="btn btn-primary" id="updateResume">Update Resume</button>
+                            <button type="button" class="btn btn-secondary" onclick="generatePDF()">Download PDF</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings Section -->
+    <section class="job-listings" id="jobs-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Job Opportunities</h2>
+                <p>Discover roles that match your skills and career goals</p>
+            </div>
+            <div class="job-filters">
+                <select id="jobCategory">
+                    <option value="">All Categories</option>
+                    <option value="AI & Machine Learning">AI & Machine Learning</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="Web3 & Blockchain">Web3 & Blockchain</option>
+                </select>
+                <select id="jobType">
+                    <option value="">All Types</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Internship">Internship</option>
+                </select>
+                <select id="experienceLevel">
+                    <option value="">All Levels</option>
+                    <option value="Entry Level">Entry Level</option>
+                    <option value="Mid Level">Mid Level</option>
+                    <option value="Senior Level">Senior Level</option>
+                </select>
+                <input type="text" id="jobSearch" placeholder="Search jobs...">
+                <button class="btn btn-primary" onclick="applyJobFilters()">Search</button>
+            </div>
+            <div class="jobs-grid" id="jobsGrid">
+                <!-- Jobs loaded dynamically -->
+            </div>
+            <div class="pagination">
+                <!-- Pagination loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Counseling Section -->
+    <section class="career-counseling" id="counseling-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Career Counseling</h2>
+                <p>Get personalized guidance for your career journey</p>
+            </div>
+            <div class="counseling-container">
+                <div class="counseling-content">
+                    <h3>Navigate Your Career Path with Expert Guidance</h3>
+                    <p>Our career counseling services combine AI-powered insights with human expertise to help you make informed decisions about your professional future.</p>
+                    
+                    <div class="counseling-options">
+                        <div class="counseling-option">
+                            <i class="fas fa-robot"></i>
+                            <h4>AI Career Advisor</h4>
+                            <p>Get instant career recommendations based on your skills and market trends</p>
+                            <button class="btn btn-secondary">Try Now</button>
+                        </div>
+                        <div class="counseling-option">
+                            <i class="fas fa-user-tie"></i>
+                            <h4>Expert Sessions</h4>
+                            <p>One-on-one guidance from industry professionals and career coaches</p>
+                            <button class="btn btn-secondary">Book Session</button>
+                        </div>
+                        <div class="counseling-option">
+                            <i class="fas fa-road"></i>
+                            <h4>Career Path Planning</h4>
+                            <p>Create a customized roadmap to achieve your long-term career goals</p>
+                            <button class="btn btn-secondary">Create Plan</button>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-counselor">
+                        <div class="ai-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="ai-content">
+                            <h4>AI Career Assistant</h4>
+                            <p>I can help you explore career options, prepare for interviews, and optimize your job search strategy. How can I assist you today?</p>
+                            <button class="btn btn-primary">Start Conversation</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="counseling-visual">
+                    <div class="counseling-visual-placeholder">
+                        <i class="fas fa-chart-network"></i>
+                        <h3>Career Path Visualization</h3>
+                        <p>Interactive tool to explore different career trajectories</p>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Explore Paths</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Status Section -->
+    <section class="application-status">
+        <div class="container">
+            <div class="section-title">
+                <h2>Application Status</h2>
+                <p>Track your job applications and interview progress</p>
+            </div>
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="status-header">
+                        <h4>Senior AI Engineer</h4>
+                        <span class="status-badge status-pending">Pending</span>
+                    </div>
+                    <p><strong>Company:</strong> NeuroTech Solutions</p>
+                    <p><strong>Applied:</strong> 2 days ago</p>
+                    <p><strong>Next Step:</strong> Resume Review</p>
+                </div>
+                <div class="status-card">
+                    <div class="status-header">
+                        <h4>Machine Learning Specialist</h4>
+                        <span class="status-badge status-reviewed">Under Review</span>
+                    </div>
+                    <p><strong>Company:</strong> DataSphere Inc</p>
+                    <p><strong>Applied:</strong> 1 week ago</p>
+                    <p><strong>Next Step:</strong> Technical Interview</p>
+                </div>
+                <div class="status-card">
+                    <div class="status-header">
+                        <h4>AI Research Intern</h4>
+                        <span class="status-badge status-accepted">Offer Received</span>
+                    </div>
+                    <p><strong>Company:</strong> AI Innovations</p>
+                    <p><strong>Applied:</strong> 3 weeks ago</p>
+                    <p><strong>Status:</strong> Offer pending acceptance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <i class="fas fa-robot"></i>
+                <h3>Cogni Career Assistant</h3>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Hello! I'm your Cogni Career Assistant. How can I help with your career journey today?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Ask about jobs, resumes, or career advice...">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CogniVerse</h3>
+                    <p>The future of education is here. Experience immersive learning in the metaverse with AI-powered guidance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/features">Features</a></li>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/career">Career Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Certifications</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> support@cogniverse.edu</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Metaverse Campus, Digital Realm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CogniVerse. All rights reserved. | Designed for the Future of Education</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeLoginModal">&times;</button>
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your CogniVerse account</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password" onclick="handleForgotPassword()">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeRegisterModal">&times;</button>
+            <div class="modal-header">
+                <h2>Join CogniVerse</h2>
+                <p>Create your account to get started</p>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+            <div class="modal-footer">
+                <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/jobs.js"></script>
+    <script src="../js/resume.js"></script>
+</body>
+</html>

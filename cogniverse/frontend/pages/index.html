@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CogniVerse - Metaverse AI Classroom</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CogniVerse</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="active">Home</a>
+                    <a href="/features">Features</a>
+                    <a href="/courses">Courses</a>
+                    <a href="/career">Career</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="registerBtn">Register</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="floating-elements" id="floatingElements"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to CogniVerse</h1>
+                <p>Step into the future of education with our immersive metaverse AI classroom. Experience personalized learning, career guidance, and cutting-edge technology all in one platform.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="exploreCourses()">Explore Courses</button>
+                    <button class="btn btn-secondary" onclick="takeTour()">Take a Tour</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Preview -->
+    <section id="features-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Powerful Features</h2>
+                <p>Discover the comprehensive tools and resources designed to enhance your learning experience</p>
+            </div>
+            <div class="features-grid" id="featuresGrid">
+                <!-- Features loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section id="featured-courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Courses</h2>
+                <p>Explore our most popular certification courses and learning paths</p>
+            </div>
+            <div class="courses-grid" id="featuredCoursesGrid">
+                <!-- Courses loaded dynamically -->
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary" onclick="exploreCourses()">View All Courses</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Services Preview -->
+    <section id="career-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Career Development</h2>
+                <p>Comprehensive tools to accelerate your professional journey</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>AI Resume Builder</h3>
+                    <p>Create professional, ATS-friendly resumes with intelligent suggestions and templates.</p>
+                    <button class="btn btn-secondary" onclick="window.location.href='/career'">Build Resume</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Job Matching</h3>
+                    <p>Get personalized job recommendations based on your skills and career goals.</p>
+                    <button class="btn btn-secondary" onclick="window.location.href='/career'">Find Jobs</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Career Counseling</h3>
+                    <p>Receive expert guidance to navigate your career path and make informed decisions.</p>
+                    <button class="btn btn-secondary" onclick="window.location.href='/career'">Get Guidance</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card" style="text-align: center;">
+                    <div class="stat-value">10,000+</div>
+                    <div class="stat-label">Active Learners</div>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="stat-value">500+</div>
+                    <div class="stat-label">Expert Courses</div>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">Completion Rate</div>
+                </div>
+                <div class="feature-card" style="text-align: center;">
+                    <div class="stat-value">2,000+</div>
+                    <div class="stat-label">Career Placements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to Transform Your Learning?</h2>
+                <p>Join thousands of learners who are already experiencing the future of education</p>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn btn-primary" onclick="document.getElementById('registerModal').classList.add('active')">
+                    Start Learning Free
+                </button>
+                <p style="color: #a0a0e0; margin-top: 1rem;">No credit card required • 14-day free trial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <i class="fas fa-robot"></i>
+                <h3>Cogni AI Assistant</h3>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Hello! I'm your Cogni AI assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message...">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CogniVerse</h3>
+                    <p>The future of education is here. Experience immersive learning in the metaverse with AI-powered guidance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/features">Features</a></li>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/career">Career Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Certifications</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> support@cogniverse.edu</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Metaverse Campus, Digital Realm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CogniVerse. All rights reserved. | Designed for the Future of Education</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeLoginModal">&times;</button>
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your CogniVerse account</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password" onclick="handleForgotPassword()">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeRegisterModal">&times;</button>
+            <div class="modal-header">
+                <h2>Join CogniVerse</h2>
+                <p>Create your account to get started</p>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+            <div class="modal-footer">
+                <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/homepage.js"></script>
+</body>
+</html>
