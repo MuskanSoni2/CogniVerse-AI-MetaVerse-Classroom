@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - CogniVerse</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CogniVerse</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="features.html">Features</a>
+                    <a href="courses.html" class="active">Courses</a>
+                    <a href="career.html">Career</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="registerBtn">Register</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Courses Page -->
+    <main>
+        <!-- Hero Section -->
+        <section class="courses-hero">
+            <div class="container">
+                <h1>Explore Our Courses</h1>
+                <p>Learn from industry experts and earn recognized certifications</p>
+            </div>
+        </section>
+
+        <!-- Courses Grid -->
+        <section class="courses-section">
+            <div class="container">
+                <div id="coursesGrid" class="courses-grid">
+                    <!-- Courses loaded here from API -->
+                    <div class="course-card">
+                        <div class="course-image">
+                            <div class="course-badge">Featured</div>
+                            <i class="fas fa-code" style="font-size: 3rem; color: #00d4ff;"></i>
+                        </div>
+                        <div class="course-content">
+                            <h3>AI & Machine Learning Fundamentals</h3>
+                            <p>Master the basics of artificial intelligence and machine learning with hands-on projects.</p>
+                            <div class="course-meta">
+                                <span class="level">Intermediate</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">$99</span>
+                                <button class="btn btn-secondary btn-small">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <i class="fas fa-globe" style="font-size: 3rem; color: #00ff88;"></i>
+                        </div>
+                        <div class="course-content">
+                            <h3>Web Development Bootcamp</h3>
+                            <p>Build modern web applications with React, Node.js, and MongoDB.</p>
+                            <div class="course-meta">
+                                <span class="level">Beginner</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">$79</span>
+                                <button class="btn btn-secondary btn-small">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <i class="fas fa-chart-line" style="font-size: 3rem; color: #ff00ff;"></i>
+                        </div>
+                        <div class="course-content">
+                            <h3>Data Science & Analytics</h3>
+                            <p>Analyze data and create insights with Python, SQL, and visualization tools.</p>
+                            <div class="course-meta">
+                                <span class="level">Intermediate</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">$89</span>
+                                <button class="btn btn-secondary btn-small">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <i class="fas fa-mobile-alt" style="font-size: 3rem; color: #ffaa00;"></i>
+                        </div>
+                        <div class="course-content">
+                            <h3>Mobile App Development</h3>
+                            <p>Create iOS and Android apps with React Native and Flutter.</p>
+                            <div class="course-meta">
+                                <span class="level">Advanced</span>
+                                <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                            </div>
+                            <div class="course-footer">
+                                <span class="price">$109</span>
+                                <button class="btn btn-secondary btn-small">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CogniVerse</h3>
+                    <p>The future of education is here.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="career.html">Career</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeLoginModal">&times;</button>
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeRegisterModal">&times;</button>
+            <div class="modal-header">
+                <h2>Join CogniVerse</h2>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>

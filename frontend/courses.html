@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - CogniVerse</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CogniVerse</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="features.html">Features</a>
+                    <a href="courses.html" class="active">Courses</a>
+                    <a href="career.html">Career</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-secondary" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="registerBtn">Register</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Courses Hero Section -->
+    <section class="courses-hero">
+        <div class="courses-hero-bg"></div>
+        <div class="floating-elements" id="coursesFloatingElements"></div>
+        <div class="container">
+            <div class="courses-hero-content">
+                <h1>Explore Our Courses</h1>
+                <p>Discover cutting-edge courses in emerging technologies, designed by industry experts and delivered in our immersive metaverse environment.</p>
+                <div class="search-container">
+                    <input type="text" id="courseSearch" placeholder="Search for courses, topics, or instructors...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="courses-container">
+                <!-- Filters Sidebar -->
+                <div class="filters-sidebar">
+                    <div class="filter-card">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="ai-ml" name="category" value="AI & Machine Learning" checked>
+                                <label for="ai-ml">AI & Machine Learning</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="metaverse" name="category" value="Metaverse Development">
+                                <label for="metaverse">Metaverse Development</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="data-science" name="category" value="Data Science">
+                                <label for="data-science">Data Science</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="web3" name="category" value="Web3 & Blockchain">
+                                <label for="web3">Web3 & Blockchain</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="cybersecurity" name="category" value="Cybersecurity">
+                                <label for="cybersecurity">Cybersecurity</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="arvr" name="category" value="AR/VR Development">
+                                <label for="arvr">AR/VR Development</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="quantum" name="category" value="Quantum Computing">
+                                <label for="quantum">Quantum Computing</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-card">
+                        <h3>Difficulty Level</h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="beginner" name="level" value="beginner" checked>
+                                <label for="beginner">Beginner</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="intermediate" name="level" value="intermediate" checked>
+                                <label for="intermediate">Intermediate</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="advanced" name="level" value="advanced" checked>
+                                <label for="advanced">Advanced</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-card">
+                        <h3>Price</h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="free" name="price" value="free" checked>
+                                <label for="free">Free</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="paid" name="price" value="paid" checked>
+                                <label for="paid">Paid</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-card">
+                        <h3>Duration</h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="short" name="duration" value="short" checked>
+                                <label for="short">< 4 weeks</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="medium" name="duration" value="medium" checked>
+                                <label for="medium">4-12 weeks</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="long" name="duration" value="long" checked>
+                                <label for="long">> 12 weeks</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" style="width: 100%;" onclick="applyFilters()">Apply Filters</button>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="clearAllFilters()">Clear All</button>
+                </div>
+
+                <!-- Courses Grid -->
+                <div class="courses-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h3>All Courses</h3>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="color: #a0a0e0;">Sort by:</span>
+                            <select onchange="sortCourses(this.value)" style="background: var(--card-bg); color: var(--light); border: 1px solid rgba(0, 247, 255, 0.3); padding: 0.5rem; border-radius: 8px;">
+                                <option value="newest">Newest First</option>
+                                <option value="popular">Most Popular</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="courses-grid" id="coursesGrid">
+                        <!-- Courses loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <!-- Pagination loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section id="featured-categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Categories</h2>
+                <p>Explore courses in high-demand technology fields</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" style="text-align: center; cursor: pointer;" onclick="filterByCategory('AI & Machine Learning')">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Master artificial intelligence, deep learning, and neural networks</p>
+                    <span style="color: var(--primary); font-weight: 600;">24 courses</span>
+                </div>
+                <div class="feature-card" style="text-align: center; cursor: pointer;" onclick="filterByCategory('Data Science')">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Science</h3>
+                    <p>Learn data analysis, visualization, and machine learning</p>
+                    <span style="color: var(--primary); font-weight: 600;">18 courses</span>
+                </div>
+                <div class="feature-card" style="text-align: center; cursor: pointer;" onclick="filterByCategory('Metaverse Development')">
+                    <div class="feature-icon">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3>Metaverse Development</h3>
+                    <p>Build immersive virtual worlds and experiences</p>
+                    <span style="color: var(--primary); font-weight: 600;">12 courses</span>
+                </div>
+                <div class="feature-card" style="text-align: center; cursor: pointer;" onclick="filterByCategory('Web3 & Blockchain')">
+                    <div class="feature-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Web3 & Blockchain</h3>
+                    <p>Explore decentralized applications and smart contracts</p>
+                    <span style="color: var(--primary); font-weight: 600;">15 courses</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta-courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Start Your Learning Journey Today</h2>
+                <p>Join thousands of students who are building the future with CogniVerse</p>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn btn-primary" onclick="document.getElementById('registerModal').classList.add('active')">
+                    Get Started Free
+                </button>
+                <p style="color: #a0a0e0; margin-top: 1rem;">Free access to selected courses • Cancel anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <i class="fas fa-robot"></i>
+                <h3>Cogni AI Assistant</h3>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Hello! I can help you find the perfect course. What are you interested in learning?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Ask about courses or topics...">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CogniVerse</h3>
+                    <p>The future of education is here. Experience immersive learning in the metaverse with AI-powered guidance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/features">Features</a></li>
+                        <li><a href="/courses">Courses</a></li>
+                        <li><a href="/career">Career Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Certifications</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> support@cogniverse.edu</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Metaverse Campus, Digital Realm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CogniVerse. All rights reserved. | Designed for the Future of Education</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeLoginModal">&times;</button>
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your CogniVerse account</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password" onclick="handleForgotPassword()">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeRegisterModal">&times;</button>
+            <div class="modal-header">
+                <h2>Join CogniVerse</h2>
+                <p>Create your account to get started</p>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+            <div class="modal-footer">
+                <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>

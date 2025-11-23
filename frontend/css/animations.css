@@ -1,0 +1,788 @@
+/* ============================================
+   ENHANCED INTERACTIVE ANIMATIONS
+   ============================================ */
+
+/* Advanced Gradient Animation */
+@keyframes advancedGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Floating particles with rotation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Enhanced Pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* Enhanced Glow animation */
+@keyframes enhancedGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(0, 247, 255, 0.3),
+                    inset 0 0 10px rgba(0, 247, 255, 0.1),
+                    0 0 5px rgba(138, 43, 226, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 247, 255, 0.8),
+                    0 0 60px rgba(0, 247, 255, 0.4),
+                    inset 0 0 20px rgba(0, 247, 255, 0.2),
+                    0 0 15px rgba(138, 43, 226, 0.6);
+    }
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Rotating gradient */
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Advanced Blob animation with morphing */
+@keyframes blobAnimation {
+    0%, 100% {
+        transform: scale(1) translateX(0) translateY(0);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+    25% {
+        transform: scale(1.2) translateX(30px) translateY(-20px);
+        border-radius: 70% 30% 40% 60% / 30% 70% 50% 40%;
+    }
+    50% {
+        transform: scale(0.9) translateX(-30px) translateY(20px);
+        border-radius: 30% 70% 50% 40% / 60% 40% 30% 70%;
+    }
+    75% {
+        transform: scale(1.1) translateX(20px) translateY(30px);
+        border-radius: 50% 40% 60% 30% / 40% 60% 70% 30%;
+    }
+}
+
+/* Bouncy animation */
+@keyframes bouncy {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-25px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Flip animation */
+@keyframes flipInX {
+    from {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+/* Zoom in animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide in from top */
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Background moving animation */
+@keyframes moveStars {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(2000px);
+    }
+}
+
+/* Rainbow color animation */
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    25% { filter: hue-rotate(90deg); }
+    50% { filter: hue-rotate(180deg); }
+    75% { filter: hue-rotate(270deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Scanline animation */
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Wave animation */
+@keyframes wave {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+/* Button pulse animation */
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(0, 247, 255, 0.5),
+                    0 0 10px rgba(0, 247, 255, 0.3),
+                    0 0 15px rgba(138, 43, 226, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 247, 255, 0.8),
+                    0 0 30px rgba(0, 247, 255, 0.5),
+                    0 0 40px rgba(0, 247, 255, 0.3),
+                    0 0 50px rgba(138, 43, 226, 0.4);
+    }
+}
+
+/* Border gradient animation */
+@keyframes borderGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* Swipe animation */
+@keyframes swipe {
+    0% {
+        transform: translateX(-100%) scaleX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%) scaleX(1);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   ANIMATED BACKGROUND CLASSES
+   ============================================ */
+
+.animated-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 400%;
+    background: linear-gradient(
+        45deg,
+        #0a0e27 0%,
+        #1a1a4d 15%,
+        #0f2d5c 30%,
+        #1a0f3d 45%,
+        #2d0a3d 60%,
+        #0f2d5c 75%,
+        #1a1a4d 90%,
+        #0a0e27 100%
+    );
+    background-size: 100% 100%;
+    animation: advancedGradient 25s ease infinite;
+    z-index: -2;
+}
+
+.animated-bg::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(0, 247, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 127, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 60%);
+    animation: pulse 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* ============================================
+   PARTICLE SYSTEM
+   ============================================ */
+
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(0, 247, 255, 0.9);
+    border-radius: 50%;
+    animation: float linear infinite;
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.8),
+                0 0 30px rgba(0, 247, 255, 0.4),
+                0 0 45px rgba(138, 43, 226, 0.3);
+    filter: blur(0.5px);
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+    background: rgba(0, 247, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.9);
+}
+
+.particle:nth-child(2) {
+    left: 20%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+    background: rgba(138, 43, 226, 0.9);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.9);
+}
+
+.particle:nth-child(3) {
+    left: 30%;
+    animation-duration: 14s;
+    animation-delay: 4s;
+    background: rgba(0, 247, 255, 0.8);
+}
+
+.particle:nth-child(4) {
+    left: 40%;
+    animation-duration: 16s;
+    animation-delay: 1s;
+    background: rgba(255, 0, 127, 0.9);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.8);
+}
+
+.particle:nth-child(5) {
+    left: 50%;
+    animation-duration: 13s;
+    animation-delay: 3s;
+    background: rgba(0, 247, 255, 0.85);
+}
+
+.particle:nth-child(6) {
+    left: 60%;
+    animation-duration: 15s;
+    animation-delay: 5s;
+    background: rgba(138, 43, 226, 0.8);
+}
+
+.particle:nth-child(7) {
+    left: 70%;
+    animation-duration: 11s;
+    animation-delay: 2s;
+    background: rgba(255, 0, 127, 0.8);
+}
+
+.particle:nth-child(8) {
+    left: 80%;
+    animation-duration: 17s;
+    animation-delay: 4s;
+    background: rgba(0, 247, 255, 0.75);
+}
+
+.particle:nth-child(9) {
+    left: 90%;
+    animation-duration: 12s;
+    animation-delay: 1s;
+    background: rgba(138, 43, 226, 0.85);
+}
+
+.particle:nth-child(10) {
+    left: 15%;
+    animation-duration: 14s;
+    animation-delay: 3s;
+    background: rgba(255, 0, 127, 0.75);
+}
+
+/* ============================================
+   TEXT EFFECTS
+   ============================================ */
+
+.gradient-text {
+    background: linear-gradient(
+        45deg,
+        #00f7ff,
+        #ff00ff,
+        #00f7ff
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+.neon-text {
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff,
+                 0 0 20px #00f7ff,
+                 0 0 30px #00f7ff,
+                 0 0 40px #00f7ff,
+                 0 0 55px #ff00ff;
+    animation: enhancedGlow 2s ease-in-out infinite;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.rainbow-element {
+    animation: rainbow 3s linear infinite;
+}
+
+/* ============================================
+   ELEMENT ANIMATIONS
+   ============================================ */
+
+.glow-element {
+    animation: enhancedGlow 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.glow-element:hover {
+    animation: enhancedGlow 1s ease-in-out infinite;
+    transform: scale(1.05);
+}
+
+.pulse-element {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.bounce-in {
+    animation: bouncy 1.5s ease-in-out infinite;
+}
+
+.flip-in {
+    animation: flipInX 0.8s ease-out;
+}
+
+.slide-left {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-right {
+    animation: slideInRight 0.8s ease-out;
+}
+
+.slide-up {
+    animation: slideInUp 0.8s ease-out;
+}
+
+.wave-animation {
+    animation: wave 2s ease-in-out infinite;
+}
+
+.heartbeat-animation {
+    animation: heartbeat 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.shake-animation {
+    animation: shake 0.5s infinite;
+}
+
+.swipe-animation {
+    animation: swipe 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   CARD AND CONTAINER ANIMATIONS
+   ============================================ */
+
+.animated-card {
+    position: relative;
+    background: rgba(30, 30, 60, 0.8);
+    border: 2px solid rgba(0, 247, 255, 0.3);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.animated-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(0, 247, 255, 0.1) 25%,
+        transparent 50%,
+        rgba(255, 0, 127, 0.1) 75%,
+        transparent 100%
+    );
+    animation: rotateGradient 3s linear infinite;
+    z-index: -1;
+}
+
+.animated-card:hover {
+    border-color: rgba(0, 247, 255, 0.9);
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.5),
+                inset 0 0 30px rgba(0, 247, 255, 0.1),
+                0 0 20px rgba(138, 43, 226, 0.3);
+    transform: translateY(-12px) scale(1.03);
+    background: rgba(30, 30, 90, 0.95);
+}
+
+.animated-card:hover::before {
+    animation: rotateGradient 1.5s linear infinite;
+}
+
+/* ============================================
+   BLOB EFFECTS
+   ============================================ */
+
+.blob {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 247, 255, 0.15);
+    filter: blur(40px);
+    animation: blobAnimation 8s ease-in-out infinite;
+}
+
+.blob:nth-child(2) {
+    animation: blobAnimation 10s ease-in-out infinite reverse;
+    background: rgba(138, 43, 226, 0.15);
+}
+
+.blob:nth-child(3) {
+    animation: blobAnimation 12s ease-in-out infinite;
+    background: rgba(255, 0, 127, 0.15);
+}
+
+/* ============================================
+   INTERACTIVE EFFECTS
+   ============================================ */
+
+.interactive-element {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.interactive-element::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(0, 247, 255, 0.4) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.interactive-element:hover::after {
+    width: 400px;
+    height: 400px;
+}
+
+.interactive-element:active::after {
+    animation: pulse 0.3s ease-out;
+}
+
+/* ============================================
+   BUTTON ANIMATIONS
+   ============================================ */
+
+.btn {
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.btn:hover {
+    animation: buttonPulse 0.5s ease-in-out;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+.gradient-border {
+    background: linear-gradient(45deg, #00f7ff, #ff00ff, #00f7ff) border-box;
+    border: 2px solid transparent;
+    animation: borderGradient 3s ease infinite;
+}
+
+/* ============================================
+   STAGGERED ANIMATIONS
+   ============================================ */
+
+.animate-item {
+    animation: zoomIn 0.6s ease-out forwards;
+}
+
+.animate-item:nth-child(1) { animation-delay: 0.1s; }
+.animate-item:nth-child(2) { animation-delay: 0.2s; }
+.animate-item:nth-child(3) { animation-delay: 0.3s; }
+.animate-item:nth-child(4) { animation-delay: 0.4s; }
+.animate-item:nth-child(5) { animation-delay: 0.5s; }
+.animate-item:nth-child(6) { animation-delay: 0.6s; }
+.animate-item:nth-child(7) { animation-delay: 0.7s; }
+.animate-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* ============================================
+   SECTION EFFECTS
+   ============================================ */
+
+.hero-animated {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-animated::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 247, 255, 0.15) 0%,
+        transparent 70%
+    );
+    animation: pulse 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* ============================================
+   SCANLINE AND GRID EFFECTS
+   ============================================ */
+
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 247, 255, 0.9),
+        transparent
+    );
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+}
+
+.grid-bg {
+    background-image: 
+        linear-gradient(rgba(0, 247, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 247, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveStars 20s linear infinite;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .particle {
+        width: 2px;
+        height: 2px;
+    }
+
+    .blob {
+        width: 60px;
+        height: 60px;
+    }
+
+    .animated-card:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+
+    .interactive-element:hover::after {
+        width: 200px;
+        height: 200px;
+    }
+
+    .neon-text {
+        font-size: 0.9em;
+        letter-spacing: 1px;
+    }
+}
+
+/* Canvas-based animated background (behind other layers) */
+.animated-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -3;
+    display: block;
+}
+
+/* When reduced motion is preferred, hide heavy canvas animation */
+@media (prefers-reduced-motion: reduce) {
+    .animated-canvas { display: none; }
+}
